@@ -1,4 +1,4 @@
-FROM python:3-slim
+FROM python:3
 ENV PROJECT_ROOT /app
 WORKDIR $PROJECT_ROOT
 COPY requirements.txt requirements.txt

@@ -15,8 +15,22 @@ spec:
         app: django-container
     spec:
       containers:
-        - name: django-web
-          image: jamestheengineer/k8s_django:1.0.0
-          imagePullPolicy: Never
+        - name: django
+          image: jamestheengineer/k8s_django:1.4.0
           ports:
             - containerPort: 8000
+          env:
+            - name: POSTGRES_USER
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-credentials
+                  key: user
+
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-credentials
+                  key: password
+
+            - name: POSTGRES_HOST
+              value: postgres-service
