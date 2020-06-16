@@ -38,9 +38,9 @@ INSTALLED_APPS = [
     # Running Health Checks
     'health_check',
     'health_check.db',
-    #'health_check.cache',
-    #'health_check.contrib.celery',
-    #'health_check.contrib.redis',
+    'health_check.cache',
+    'health_check.contrib.celery',
+    'health_check.contrib.redis',
 
     # Project
     'demoapp'
