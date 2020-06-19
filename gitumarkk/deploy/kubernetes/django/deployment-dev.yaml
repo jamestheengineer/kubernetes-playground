@@ -16,9 +16,12 @@ spec:
     spec:
       containers:
         - name: django
-          image: jamestheengineer/k8s_django:1.19.0
+          image: jamestheengineer/k8s_django:1.20.0
           ports:
             - containerPort: 8000
+          volumeMounts:
+            - name: reload
+              mountPath: /app
           env:
             - name: POSTGRES_USER
               valueFrom:
@@ -37,3 +40,8 @@ spec:
             
             - name: REDIS_HOST
               value: redis-service
+      volumes:
+        - name: reload
+          hostPath:
+            path: /C/Users/James/kubernetes-playground/gitumarkk
+            type: Directory
