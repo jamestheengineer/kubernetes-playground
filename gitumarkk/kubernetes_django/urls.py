@@ -17,6 +17,7 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('polls/', include('polls.urls')),
 
     # Creating the health check endpoint
     path(r'health/', include('health_check.urls'))
