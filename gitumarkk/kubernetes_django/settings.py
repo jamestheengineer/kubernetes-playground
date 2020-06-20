@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'health_check.contrib.redis',
 
     # Project
-    'demoapp'
+    'demoapp',
+    'polls.apps.PollsConfig',
 ]
 
 MIDDLEWARE = [
